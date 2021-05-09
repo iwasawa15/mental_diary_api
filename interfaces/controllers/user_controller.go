@@ -1,9 +1,9 @@
 package controllers
 
 import (
-	"security_sample/domain"
-	"security_sample/interfaces/database"
-	"security_sample/usecase"
+	"mental_diary_api/domain"
+	"mental_diary_api/interfaces/database"
+	"mental_diary_api/usecase"
 	"strconv"
 )
 

@@ -1,7 +1,7 @@
 package database
 
 import (
-	"security_sample/domain"
+	"mental_diary_api/domain"
 )
 
 type UserRepository struct {

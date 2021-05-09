@@ -1,6 +1,6 @@
 package usecase
 
-import "security_sample/domain"
+import "mental_diary_api/domain"
 
 type UserInteractor struct {
 	UserRepository UserRepository

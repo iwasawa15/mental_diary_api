@@ -3,7 +3,7 @@ package infrastructure
 import (
 	gin "github.com/gin-gonic/gin"
 
-	"security_sample/interfaces/controllers"
+	"mental_diary_api/interfaces/controllers"
 )
 
 var Router *gin.Engine

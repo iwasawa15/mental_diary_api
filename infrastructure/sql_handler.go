@@ -5,7 +5,7 @@ import (
 
 	_ "github.com/mattn/go-sqlite3"
 
-	"security_sample/interfaces/database"
+	"mental_diary_api/interfaces/database"
 )
 
 type SqlHandler struct {
@@ -13,7 +13,7 @@ type SqlHandler struct {
 }
 
 func NewSqlHandler() database.SqlHandler {
-	conn, err := sql.Open("sqlite3", "./db/security_sample.db")
+	conn, err := sql.Open("sqlite3", "./db/mental_diary_api.db")
 	if err != nil {
 		panic(err.Error())
 	}

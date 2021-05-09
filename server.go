@@ -1,6 +1,6 @@
 package main
 
-import "security_sample/infrastructure"
+import "mental_diary_api/infrastructure"
 
 func main() {
 	infrastructure.Router.Run()

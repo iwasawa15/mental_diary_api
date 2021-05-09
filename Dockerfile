@@ -1,9 +1,8 @@
 FROM golang:latest
-RUN apt-get update -y && apt-get install sqlite3 libsqlite3-dev -y
-RUN mkdir /app
-WORKDIR /app
-ADD . /app
-VOLUME /app
+RUN mkdir /go/src/app
+WORKDIR /go/src/app
+ADD . /go/src/app
+VOLUME /go/src/app/
 RUN go mod download
 EXPOSE 8080
-CMD "go" "run" "server.go"
+CMD "go" "run" "main.go"
