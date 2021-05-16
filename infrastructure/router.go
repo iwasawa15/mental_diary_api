@@ -1,7 +1,7 @@
 package infrastructure
 
 import (
-	gin "github.com/gin-gonic/gin"
+	"github.com/gin-gonic/gin"
 
 	"mental_diary_api/interfaces/controllers"
 )

@@ -3,7 +3,7 @@ package infrastructure
 import (
 	"database/sql"
 
-	_ "github.com/mattn/go-sqlite3"
+	_ "github.com/go-sql-driver/mysql"
 
 	"mental_diary_api/interfaces/database"
 )
@@ -13,14 +13,11 @@ type SqlHandler struct {
 }
 
 func NewSqlHandler() database.SqlHandler {
-	conn, err := sql.Open("sqlite3", "./db/mental_diary_api.db")
+	conn, err := sql.Open("mysql", "hideto:hoge@tcp(db:3306)/mental_diary")
 	if err != nil {
 		panic(err.Error())
 	}
-	_, err = conn.Exec("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, email TEXT NOT NULL)")
-	if err != nil {
-		panic(err.Error())
-	}
+
 	sqlHandler := new(SqlHandler)
 	sqlHandler.Conn = conn
 	return sqlHandler

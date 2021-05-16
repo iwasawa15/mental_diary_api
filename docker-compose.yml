@@ -14,18 +14,19 @@ services:
     build: 
       context: .
       dockerfile: ./mysql/Dockerfile
-    container_name: todo_db
     environment:
-      MYSQL_USER: root
-      MYSQL_ROOT_PASSWORD: hoge
-      MYSQL_DATABASE: go_todo
-      hostname: todo_db
+      MYSQL_USER: hideto
+      MYSQL_PASSWORD: hoge
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: mental_diary
+      hostname: mental_diary
     command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
     ports: 
       - "3306:3306"
     volumes:
-      - todo_db_data:/var/lib/mysql
+      - ./mysql/init:/docker-entrypoint-initdb.d
+      - db_data:/var/lib/mysql
       
 volumes:
-  todo_db_data:
+  db_data:
     driver: local

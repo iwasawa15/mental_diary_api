@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"fmt"
 	"mental_diary_api/domain"
 	"mental_diary_api/interfaces/database"
 	"mental_diary_api/usecase"
@@ -24,6 +25,7 @@ func NewUserController(sqlHandler database.SqlHandler) *UserController {
 func (controller *UserController) Create(c Context) {
 	u := domain.User{}
 	c.Bind(&u)
+	fmt.Println(u)
 	err := controller.Interactor.Add(u)
 	if err != nil {
 		c.JSON(500, err.Error())
